@@ -1,0 +1,28 @@
+//圆角边框
+@mixin border-radius($radius)
+  -webkit-border-radius: $radius
+  -moz-border-radius: $radius
+  -ms-border-radius: $radius
+  border-radius: $radius
+
+//跨浏览器透明度设置
+@mixin opacity($opacity)
+  opacity: $opacity
+  $opacity-ie: $opacity * 100 //IE8
+  filter: alpha(opacity=$opacity-ie)
+
+
+//文本超出显示省略号 单行
+@mixin text-single-line()
+  white-space: nowrap
+  overflow: hidden
+  text-overflow: ellipsis
+
+//文本超出显示省略号 多行
+@mixin text-multi-line($rows)
+  overflow: hidden
+  text-overflow: ellipsis
+  display: -webkit-box
+  -webkit-line-clamp: $rows
+  -webkit-box-orient: vertical
+
